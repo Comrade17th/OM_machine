@@ -142,23 +142,76 @@ namespace OM_aLLin
         public void ChangeMethod(out List<string> listStats)
         {
             listStats = new List<string>();
-            int i = 0, j = 0;
-            bool flag = true;
-            while(i != this.trafficMap.GetLength(0) - 1 && j != this.trafficMap.GetLength(1) - 1)
+            int n = trafficMap.GetLength(0), m = trafficMap.GetLength(1);
+            int[] a = new int[storage.Length];
+            int[] b = new int[needs.Length];
+            CopyArray(storage, out a);
+            CopyArray(needs, out b);
+            int i = 0; // n
+            int j = 0; // m
+            while(i < n && j < m)
             {
-                trafficMap[i, j] += 1;
-                if (flag)
-                {
-                    flag = false;
-                    i++;
-                }
-                else
-                {
-                    flag = true;
-                    j++;
-                }
                 listStats.Add(GetInfo());
+                try
+                {
+                    if (a[i] == 0) { i++; }
+                    if (b[j] == 0) { j++; }
+                    if (a[i] == 0 && b[j] == 0) { i++; j++; }
+                    trafficMap[i, j] = FindMinElement(a[i], b[j]);
+                    a[i] -= trafficMap[i, j];
+                    b[j] -= trafficMap[i, j];
+                }
+                catch { }
             }
+        }
+
+        private void CopyArray(int[] from, out int[] to)
+        {
+            to = new int[from.Length];
+            for (int i = 0; i < from.Length; i++)
+                to[i] = from[i];
+        }
+
+        public static int FindMinElement(int a, int b)
+        {
+            if (a > b) return b;
+            if (a == b) { return a; }
+            else return a;
+        }
+
+        private bool StrokeOK(int i)
+        {
+            if (StrokeSumm(i) == storage[i])
+                return true;
+            else
+                return false;
+        }
+
+        private bool ColumnOK(int j)
+        {
+            if (ColumnSumm(j) == needs[j])
+                return true;
+            else
+                return false;
+        }
+        private int ColumnSumm(int j)
+        {
+            int sum = 0;
+            for (int i = 0; i < trafficMap.GetLength(0); i++)
+            {
+                sum += trafficMap[i, j];
+            }
+            return sum;
+        }
+
+        private int StrokeSumm(int i)
+        {
+            int sum = 0;
+            for (int j = 0; j < trafficMap.GetLength(1); j++)
+            {
+                sum += trafficMap[i, j];
+            }
+            return sum;
         }
 
     }
