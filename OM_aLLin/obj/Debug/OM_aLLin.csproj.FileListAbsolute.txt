@@ -1,0 +1,11 @@
+C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\bin\Debug\OM_aLLin.exe.config
+C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\bin\Debug\OM_aLLin.exe
+C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\bin\Debug\OM_aLLin.pdb
+C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.csproj.AssemblyReference.cache
+C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.csproj.SuggestedBindingRedirects.cache
+C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.Form1.resources
+C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.Properties.Resources.resources
+C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.csproj.GenerateResource.cache
+C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.csproj.CoreCompileInputs.cache
+C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.exe
+C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.pdb
