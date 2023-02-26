@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.buttonNextStep = new System.Windows.Forms.Button();
+            this.buttonPrevStep = new System.Windows.Forms.Button();
+            this.labelPointer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -39,22 +42,58 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
+            // buttonNextStep
+            // 
+            this.buttonNextStep.Location = new System.Drawing.Point(388, 350);
+            this.buttonNextStep.Name = "buttonNextStep";
+            this.buttonNextStep.Size = new System.Drawing.Size(39, 23);
+            this.buttonNextStep.TabIndex = 1;
+            this.buttonNextStep.Text = "next";
+            this.buttonNextStep.UseVisualStyleBackColor = true;
+            this.buttonNextStep.Click += new System.EventHandler(this.buttonNextStep_Click);
+            // 
+            // buttonPrevStep
+            // 
+            this.buttonPrevStep.Location = new System.Drawing.Point(310, 350);
+            this.buttonPrevStep.Name = "buttonPrevStep";
+            this.buttonPrevStep.Size = new System.Drawing.Size(36, 23);
+            this.buttonPrevStep.TabIndex = 2;
+            this.buttonPrevStep.Text = "prev";
+            this.buttonPrevStep.UseVisualStyleBackColor = true;
+            this.buttonPrevStep.Click += new System.EventHandler(this.buttonPrevStep_Click);
+            // 
+            // labelPointer
+            // 
+            this.labelPointer.AutoSize = true;
+            this.labelPointer.Location = new System.Drawing.Point(352, 355);
+            this.labelPointer.Name = "labelPointer";
+            this.labelPointer.Size = new System.Drawing.Size(30, 13);
+            this.labelPointer.TabIndex = 3;
+            this.labelPointer.Text = "2/11";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 536);
+            this.Controls.Add(this.labelPointer);
+            this.Controls.Add(this.buttonPrevStep);
+            this.Controls.Add(this.buttonNextStep);
             this.Controls.Add(this.richTextBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button buttonNextStep;
+        private System.Windows.Forms.Button buttonPrevStep;
+        private System.Windows.Forms.Label labelPointer;
     }
 }
 

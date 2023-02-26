@@ -98,10 +98,18 @@ namespace OM_aLLin
         public string GetInfo()
         {
             string result = "";
+            result += GetPriceMap();
+            result += GetTrafficMap();
+            return result;
+        }
+
+        private string GetPriceMap()
+        {
+            string result = "";
             result += "Price info\n";
-            for(int i = 0; i < priceMap.GetLength(0); i++)
+            for (int i = 0; i < priceMap.GetLength(0); i++)
             {
-                for(int j = 0; j < priceMap.GetLength(1); j++)
+                for (int j = 0; j < priceMap.GetLength(1); j++)
                 {
                     result += $"{priceMap[i, j]}\t";
                 }
@@ -112,5 +120,46 @@ namespace OM_aLLin
             result += "\n";
             return result;
         }
+
+        private string GetTrafficMap()
+        {
+            string result = "";
+            result += "Traffic info\n";
+            for (int i = 0; i < trafficMap.GetLength(0); i++)
+            {
+                for (int j = 0; j < trafficMap.GetLength(1); j++)
+                {
+                    result += $"{trafficMap[i, j]}\t";
+                }
+                result += $"{this.storage[i]}\n";
+            }
+            for (int i = 0; i < needs.Length; i++)
+                result += $"{needs[i]}\t";
+            result += "\n";
+            return result;
+        }
+
+        public void ChangeMethod(out List<string> listStats)
+        {
+            listStats = new List<string>();
+            int i = 0, j = 0;
+            bool flag = true;
+            while(i != this.trafficMap.GetLength(0) - 1 && j != this.trafficMap.GetLength(1) - 1)
+            {
+                trafficMap[i, j] += 1;
+                if (flag)
+                {
+                    flag = false;
+                    i++;
+                }
+                else
+                {
+                    flag = true;
+                    j++;
+                }
+                listStats.Add(GetInfo());
+            }
+        }
+
     }
 }

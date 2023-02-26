@@ -12,6 +12,8 @@ namespace OM_aLLin
 {
     public partial class Form1 : Form
     {
+        List<string> listStats;
+        int pointer = 0;
         public Form1()
         {
             InitializeComponent();
@@ -19,12 +21,14 @@ namespace OM_aLLin
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            run_test(richTextBox1);
+            
+            run_test(richTextBox1, out listStats);
+            initPointer();
         }
 
-        static void run_test(RichTextBox richTextBox)
+        static void run_test(RichTextBox richTextBox, out List<string> listStats)
         {
-
+            listStats = new List<string>();
             int[,] priceMap = new int[,] {
             { 2, 3, 4, 3 },
             { 5, 3, 1, 2 },
@@ -33,7 +37,55 @@ namespace OM_aLLin
             int[] storage = new int[] { 414, 138, 184 };
             int[] needs = new int[] {276, 92, 138, 184 };
             TrafficOptimization TO = new TrafficOptimization(priceMap, storage, needs);
-            richTextBox.Text = TO.GetInfo();
+            
+            TO.ChangeMethod(out listStats);
+            richTextBox.Text = listStats[0];
+        }
+
+        private void toNextStep()
+        {
+            if(pointer < listStats.Count -1)
+            {
+                
+                buttonPrevStep.Enabled = true;
+                pointer++;
+                richTextBox1.Text = listStats[pointer];
+            }
+            if( pointer == listStats.Count - 1)
+            {
+                buttonNextStep.Enabled = false;
+
+            }
+            labelPointer.Text = $"{pointer + 1}/{listStats.Count}";
+        }
+        private void initPointer()
+        {
+            labelPointer.Text = $"{pointer + 1}/{listStats.Count}";
+            buttonPrevStep.Enabled = false;
+        }
+        private void toPrevStep()
+        {
+            if (pointer > 0)
+            {
+                buttonNextStep.Enabled = true;
+                pointer--;
+                richTextBox1.Text = listStats[pointer];
+            }
+            if (pointer == 0)
+            {
+                buttonPrevStep.Enabled = false;
+            }
+            labelPointer.Text = $"{pointer + 1}/{listStats.Count}";
+        }
+
+        private void buttonNextStep_Click(object sender, EventArgs e)
+        {
+            toNextStep();
+        }
+
+        private void buttonPrevStep_Click(object sender, EventArgs e)
+        {
+            toPrevStep();
         }
     }
 }
