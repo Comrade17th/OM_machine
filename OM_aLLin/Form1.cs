@@ -24,6 +24,7 @@ namespace OM_aLLin
             
             run_test(richTextBox1, out listStats);
             initPointer();
+            int[] arr = new int[2];
         }
 
         static void run_test(RichTextBox richTextBox, out List<string> listStats)

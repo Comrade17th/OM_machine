@@ -12,6 +12,10 @@ namespace OM_aLLin
         int[,] trafficMap;
         int[] storage; // n, srtokes
         int[] needs; // m, columns
+        int[] intU;
+        int[] intV;
+        bool[] boolU;
+        bool[] boolV;
 
         // для n строки
         //Console.WriteLine(arr.GetLength(0));
@@ -223,6 +227,8 @@ namespace OM_aLLin
                     sum += trafficMap[i, j] * priceMap[i, j];
             return sum;
         }
+
+
 
     }
 }
