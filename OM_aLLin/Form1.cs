@@ -38,7 +38,7 @@ namespace OM_aLLin
             int[] needs = new int[] {276, 92, 138, 184 };
             TrafficOptimization TO = new TrafficOptimization(priceMap, storage, needs);
             
-            TO.ChangeMethod(out listStats);
+            TO.NordWestMethod(out listStats);
             richTextBox.Text = listStats[0];
         }
 

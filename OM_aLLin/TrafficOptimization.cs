@@ -100,6 +100,7 @@ namespace OM_aLLin
             string result = "";
             result += GetPriceMap();
             result += GetTrafficMap();
+            result += $"Sum = {GetFunctionSumm()}\n";
             return result;
         }
 
@@ -139,7 +140,7 @@ namespace OM_aLLin
             return result;
         }
 
-        public void ChangeMethod(out List<string> listStats)
+        public void NordWestMethod(out List<string> listStats)
         {
             listStats = new List<string>();
             int n = trafficMap.GetLength(0), m = trafficMap.GetLength(1);
@@ -211,6 +212,15 @@ namespace OM_aLLin
             {
                 sum += trafficMap[i, j];
             }
+            return sum;
+        }
+
+        private int GetFunctionSumm()
+        {
+            int sum = 0;
+            for (int i = 0; i < trafficMap.GetLength(0) && i < priceMap.GetLength(0); i++)
+                for (int j = 0; i < trafficMap.GetLength(1) && j < priceMap.GetLength(1); j++)
+                    sum += trafficMap[i, j] * priceMap[i, j];
             return sum;
         }
 
