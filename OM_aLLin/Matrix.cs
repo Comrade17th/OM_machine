@@ -32,6 +32,22 @@ namespace OM_aLLin
             columns = input.GetLength(1);
         }
 
+        public int[] getStroke(int index)
+        {
+            int[] result = new int[columns];
+            for (int i = 0; i < columns; i++)
+                result[i] = matrix[index, i];
+            return result;
+        }
+
+        public int[] getColumn(int index)
+        {
+            int[] result = new int[strokes];
+            for (int i = 0; i < strokes; i++)
+                result[i] = matrix[i, index];
+            return result;
+        }
+
         private int[,] richToList(string input, out int strokes, out int columns)
         {
             if (input[input.Length - 1] != '\n')

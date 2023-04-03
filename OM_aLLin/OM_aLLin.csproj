@@ -59,6 +59,7 @@
       <DependentUpon>Form_floyd.cs</DependentUpon>
     </Compile>
     <Compile Include="InputMaker.cs" />
+    <Compile Include="IterationGame.cs" />
     <Compile Include="Matrix.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

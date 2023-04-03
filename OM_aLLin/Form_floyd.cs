@@ -23,12 +23,15 @@ namespace OM_aLLin
         private void Form_floyd_Load(object sender, EventArgs e)
         {
             DevLoadText();
+            
         }
 
         private void DevLoadText()
         {
             richTextBox_InputMTRX.Text = "7 9 7\n9 7 8\n7 8 8";
         }
+
+
 
         private void toNextStep()
         {
@@ -84,6 +87,32 @@ namespace OM_aLLin
         private void btn_LoadMTRX_Click(object sender, EventArgs e)
         {
             loadMatrixRichToMem();
+        }
+
+        private void runCalculateIter()
+        {
+            int iterations = int.Parse(textBox_iterations.Text);
+            IterationGame ig = new IterationGame(mtrx, iterations);
+            string chances;
+            listStats = ig.Calculate(out chances);
+            richTextBox1.Text = listStats[0];
+            richTextBox_chances.Text = chances;
+            initPointer();
+        }
+
+        private void button_calculateIter_Click(object sender, EventArgs e)
+        {
+            runCalculateIter();
+        }
+
+        private void buttonNextStep_Click_1(object sender, EventArgs e)
+        {
+            toNextStep();
+        }
+
+        private void buttonPrevStep_Click_1(object sender, EventArgs e)
+        {
+            toPrevStep();
         }
     }
 }
