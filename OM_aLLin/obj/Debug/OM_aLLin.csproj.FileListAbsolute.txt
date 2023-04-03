@@ -9,3 +9,14 @@ C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\obj\Debug\OM_a
 C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.csproj.CoreCompileInputs.cache
 C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.exe
 C:\Users\Comrade\Desktop\Учеба\education\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.pdb
+C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\bin\Debug\OM_aLLin.exe.config
+C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\bin\Debug\OM_aLLin.exe
+C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\bin\Debug\OM_aLLin.pdb
+C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.csproj.AssemblyReference.cache
+C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.Form1.resources
+C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.Form_floyd.resources
+C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.Properties.Resources.resources
+C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.csproj.GenerateResource.cache
+C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.csproj.CoreCompileInputs.cache
+C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.exe
+C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.pdb
