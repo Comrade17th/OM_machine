@@ -60,6 +60,8 @@ namespace OM_aLLin
             public string getChances()
             {
                 StringBuilder sb = new StringBuilder("");
+                sb.Append(String.Format($"{chanceA[0]} {chanceA[1]} {chanceA[2]}\n"));
+                sb.Append(String.Format($"{chanceB[0]} {chanceB[1]} {chanceB[2]}\n"));
                 sb.Append(String.Format("A chances:\n"));
                 foreach (int num in chanceA)
                     sb.Append(String.Format("{0,10:f4} |", (double)num/(double) i));
@@ -78,13 +80,16 @@ namespace OM_aLLin
             iter.B_CurrentStrategy = indexOfMin(iter.A_win, out currMin);
             sumArray(ref iter.B_win, mtrx.getColumn(iter.B_CurrentStrategy));
 
+            indexOfMax(iter.B_win, out currMax);
+            indexOfMin(iter.A_win, out currMin);
+
             iter.i++;
             iter.a_price = currMin / (double)iter.i;
             iter.b_price = currMax / (double)iter.i;
             iter.nu = (iter.a_price + iter.b_price) / 2.0;
-
-            chanceA[iter.A_CurrentStrategy]++;
-            chanceB[iter.B_CurrentStrategy]++;
+            
+            iter.chanceA[iter.A_CurrentStrategy]++;
+            iter.chanceB[iter.B_CurrentStrategy]++;
         }
         
 
