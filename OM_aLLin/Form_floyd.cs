@@ -10,49 +10,39 @@ using System.Windows.Forms;
 
 namespace OM_aLLin
 {
-    public partial class Form1 : Form
+    public partial class Form_floyd : Form
     {
         List<string> listStats;
         int pointer = 0;
-        public Form1()
+        Matrix mtrx = new Matrix();
+        public Form_floyd()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form_floyd_Load(object sender, EventArgs e)
         {
+            DevLoadText();
             
-            run_test(richTextBox1, out listStats);
-            initPointer();
-            int[] arr = new int[2];
         }
 
-        static void run_test(RichTextBox richTextBox, out List<string> listStats)
+        private void DevLoadText()
         {
-            listStats = new List<string>();
-            int[,] priceMap = new int[,] {
-            { 2, 3, 4, 3 },
-            { 5, 3, 1, 2 },
-            { 2, 1, 4, 2 }
-            };
-            int[] storage = new int[] { 414, 138, 184 };
-            int[] needs = new int[] {276, 92, 138, 184 };
-            TrafficOptimization TO = new TrafficOptimization(priceMap, storage, needs);
-            
-            TO.NordWestMethod(out listStats);
-            richTextBox.Text = listStats[0];
+            richTextBox_InputMTRX.Text = "7 9 7\n9 7 8\n7 8 8";
         }
+
+
 
         private void toNextStep()
         {
-            if(pointer < listStats.Count -1)
+            if (pointer < listStats.Count - 1)
             {
-                
+
                 buttonPrevStep.Enabled = true;
                 pointer++;
                 richTextBox1.Text = listStats[pointer];
             }
-            if( pointer == listStats.Count - 1)
+            if (pointer == listStats.Count - 1)
             {
                 buttonNextStep.Enabled = false;
 
@@ -89,10 +79,40 @@ namespace OM_aLLin
             toPrevStep();
         }
 
-        private void button_Floyd_Click(object sender, EventArgs e)
+        private void loadMatrixRichToMem()
         {
-            Form_floyd frm = new Form_floyd();
-            frm.Show();
+            mtrx = new Matrix(InputMaker.StringToArr(richTextBox_InputMTRX.Text));
+        }
+
+        private void btn_LoadMTRX_Click(object sender, EventArgs e)
+        {
+            loadMatrixRichToMem();
+        }
+
+        private void runCalculateIter()
+        {
+            int iterations = int.Parse(textBox_iterations.Text);
+            IterationGame ig = new IterationGame(mtrx, iterations);
+            string chances;
+            listStats = ig.Calculate(out chances);
+            richTextBox1.Text = listStats[0];
+            richTextBox_chances.Text = chances;
+            initPointer();
+        }
+
+        private void button_calculateIter_Click(object sender, EventArgs e)
+        {
+            runCalculateIter();
+        }
+
+        private void buttonNextStep_Click_1(object sender, EventArgs e)
+        {
+            toNextStep();
+        }
+
+        private void buttonPrevStep_Click_1(object sender, EventArgs e)
+        {
+            toPrevStep();
         }
     }
 }
