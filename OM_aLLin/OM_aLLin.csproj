@@ -46,11 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Floyd.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrueFloyd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrueFloyd.Designer.cs">
+      <DependentUpon>FormTrueFloyd.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_floyd.cs">
       <SubType>Form</SubType>
@@ -67,6 +74,9 @@
     <Compile Include="TrafficOptimization.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrueFloyd.resx">
+      <DependentUpon>FormTrueFloyd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_floyd.resx">
       <DependentUpon>Form_floyd.cs</DependentUpon>

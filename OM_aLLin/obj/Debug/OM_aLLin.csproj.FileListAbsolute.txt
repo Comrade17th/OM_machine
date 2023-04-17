@@ -20,3 +20,4 @@ C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_
 C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.csproj.CoreCompileInputs.cache
 C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.exe
 C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.pdb
+C:\Users\Cheburashka\Desktop\study\university\optimiztion_methods\OM_machine\OM_aLLin\obj\Debug\OM_aLLin.FormTrueFloyd.resources
