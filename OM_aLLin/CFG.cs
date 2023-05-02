@@ -9,22 +9,24 @@ namespace OM_aLLin
 	// C# program to find the shortest
 	// path between any two nodes using
 	// Floyd Warshall Algorithm.
-	class GFG
+	public class GFG
 	{
 
 		static readonly int MAXN = 100;
 
 		// Infinite value for array
+		static bool isCalculated = false;
 		static int INF = (int)1e7;
-
+		static int V = 0;
 		static int[,] dis = new int[MAXN, MAXN];
 		static int[,] Next = new int[MAXN, MAXN];
 
 		// Initializing the distance and
 		// Next array
-		static void initialise(int V,
-							int[,] graph)
+		public static void initialise(int[,] graph)
 		{
+			isCalculated = false;
+			V = graph.GetLength(0);
 			for (int i = 0; i < V; i++)
 			{
 				for (int j = 0; j < V; j++)
@@ -64,12 +66,30 @@ namespace OM_aLLin
 			return path;
 		}
 
+		static public string getPath(int u, int v)
+        {
+			StringBuilder sb = new StringBuilder("");
+            if (isCalculated)
+            {
+				List<int> path = constructPath(u, v);
+				for (int i = 0; i < path.Count; i++)
+				{
+					sb.Append(String.Format($"{path[i]}"));
+					if (i < path.Count - 1)
+						sb.Append("->");
+				}
+			}
+
+			return sb.ToString();
+        }
+
 		// Standard Floyd Warshall Algorithm
 		// with little modification Now if we find
 		// that dis[i,j] > dis[i,k] + dis[k,j]
 		// then we modify next[i,j] = next[i,k]
-		static void floydWarshall(int V)
+		public static void floydWarshall(out List<string> result)
 		{
+			result = new List<string>();
 			for (int k = 0; k < V; k++)
 			{
 				for (int i = 0; i < V; i++)
@@ -90,9 +110,18 @@ namespace OM_aLLin
 										dis[k, j];
 							Next[i, j] = Next[i, k];
 						}
+						if(result.Count == 0)
+                        {
+							result.Add(InputMaker.arrToString(dis, V));
+                        }
+						else if (result[result.Count - 1] != InputMaker.arrToString(dis, V))
+                        {
+							result.Add(InputMaker.arrToString(dis, V));
+                        }
 					}
 				}
 			}
+			isCalculated = true;
 		}
 
 		// Print the shortest path
@@ -107,7 +136,7 @@ namespace OM_aLLin
 		}
 
 		// Driver code
-		public static void Main(String[] args)
+		public static void __test__(String[] args)
 		{
 			int V = 4;
 			int[,] graph = { { 0, 3, INF, 7 },
@@ -117,12 +146,13 @@ namespace OM_aLLin
 
 			// Function to initialise the
 			// distance and Next array
-			initialise(V, graph);
+			initialise(graph);
 
 			// Calling Floyd Warshall Algorithm,
 			// this will update the shortest
 			// distance as well as Next array
-			floydWarshall(V);
+			List<string> temp = new List<string>();
+			floydWarshall(out temp);
 			List<int> path;
 
 			// Path from node 1 to 3

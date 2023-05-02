@@ -16,7 +16,7 @@ namespace OM_aLLin
         List<string> listStats;
         int pointer = 0;
         Matrix mtrx = new Matrix();
-        Floyd fld = new Floyd();
+        //Floyd fld = new Floyd();
         public FormTrueFloyd()
         {
             InitializeComponent();
@@ -111,7 +111,16 @@ namespace OM_aLLin
 
         private void LoadResultToList()
         {
-            listStats = fld.FloydWarshall(InputMaker.StringToArr(richTextBoxInput.Text));
+            DoCFGmagic();
+            //listStats = fld.FloydWarshall(InputMaker.StringToArr(richTextBoxInput.Text));
+        }
+
+        private void DoCFGmagic()
+        {
+            List<string> result;// = new List<string>();
+            GFG.initialise(InputMaker.StringToArr(richTextBoxInput.Text));
+            GFG.floydWarshall(out result);
+            listStats = result;
         }
 
         private void buttonUpload_Click(object sender, EventArgs e)
@@ -119,6 +128,21 @@ namespace OM_aLLin
 
             LoadResultToList();
             initPointer();
+        }
+
+        private void button_MakePath_Click(object sender, EventArgs e)
+        {
+            MakePath();
+        }
+
+        private void MakePath()
+        {
+            if(textBox_pointFrom.Text != "" && textBox_pointTo.Text != "")
+            {
+                int u = int.Parse(textBox_pointFrom.Text);
+                int v = int.Parse(textBox_pointTo.Text);
+                richTextBox_pathResult.Text = GFG.getPath(u, v);
+            }
         }
     }
 }

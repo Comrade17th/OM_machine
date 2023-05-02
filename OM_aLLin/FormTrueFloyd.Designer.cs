@@ -35,6 +35,10 @@ namespace OM_aLLin
             this.buttonPrevStep = new System.Windows.Forms.Button();
             this.buttonNextStep = new System.Windows.Forms.Button();
             this.buttonUpload = new System.Windows.Forms.Button();
+            this.textBox_pointFrom = new System.Windows.Forms.TextBox();
+            this.textBox_pointTo = new System.Windows.Forms.TextBox();
+            this.richTextBox_pathResult = new System.Windows.Forms.RichTextBox();
+            this.button_MakePath = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBoxInput
@@ -92,11 +96,47 @@ namespace OM_aLLin
             this.buttonUpload.UseVisualStyleBackColor = true;
             this.buttonUpload.Click += new System.EventHandler(this.buttonUpload_Click);
             // 
+            // textBox_pointFrom
+            // 
+            this.textBox_pointFrom.Location = new System.Drawing.Point(479, 317);
+            this.textBox_pointFrom.Name = "textBox_pointFrom";
+            this.textBox_pointFrom.Size = new System.Drawing.Size(40, 20);
+            this.textBox_pointFrom.TabIndex = 8;
+            // 
+            // textBox_pointTo
+            // 
+            this.textBox_pointTo.Location = new System.Drawing.Point(530, 317);
+            this.textBox_pointTo.Name = "textBox_pointTo";
+            this.textBox_pointTo.Size = new System.Drawing.Size(40, 20);
+            this.textBox_pointTo.TabIndex = 9;
+            // 
+            // richTextBox_pathResult
+            // 
+            this.richTextBox_pathResult.Location = new System.Drawing.Point(479, 352);
+            this.richTextBox_pathResult.Name = "richTextBox_pathResult";
+            this.richTextBox_pathResult.Size = new System.Drawing.Size(159, 33);
+            this.richTextBox_pathResult.TabIndex = 10;
+            this.richTextBox_pathResult.Text = "";
+            // 
+            // button_MakePath
+            // 
+            this.button_MakePath.Location = new System.Drawing.Point(578, 315);
+            this.button_MakePath.Name = "button_MakePath";
+            this.button_MakePath.Size = new System.Drawing.Size(75, 23);
+            this.button_MakePath.TabIndex = 11;
+            this.button_MakePath.Text = "button1";
+            this.button_MakePath.UseVisualStyleBackColor = true;
+            this.button_MakePath.Click += new System.EventHandler(this.button_MakePath_Click);
+            // 
             // FormTrueFloyd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_MakePath);
+            this.Controls.Add(this.richTextBox_pathResult);
+            this.Controls.Add(this.textBox_pointTo);
+            this.Controls.Add(this.textBox_pointFrom);
             this.Controls.Add(this.buttonUpload);
             this.Controls.Add(this.labelPointer);
             this.Controls.Add(this.buttonPrevStep);
@@ -119,5 +159,9 @@ namespace OM_aLLin
         private System.Windows.Forms.Button buttonPrevStep;
         private System.Windows.Forms.Button buttonNextStep;
         private System.Windows.Forms.Button buttonUpload;
+        private System.Windows.Forms.TextBox textBox_pointFrom;
+        private System.Windows.Forms.TextBox textBox_pointTo;
+        private System.Windows.Forms.RichTextBox richTextBox_pathResult;
+        private System.Windows.Forms.Button button_MakePath;
     }
 }

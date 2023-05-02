@@ -32,29 +32,6 @@ namespace OM_aLLin
             return sb.ToString();
         }
 
-        //public List<string> FloydWarshall(int[] matrix)
-        //{
-        //    List<string> result = new List<string>();
-        //    int sz = matrix.GetLength(0);
-        //    for (var k = 0; k < sz; ++k)
-        //    {
-        //        for (var i = 0; i < sz; ++i)
-        //        {
-        //            for (var j = 0; j < sz; ++j)
-        //            {
-        //                var distance = matrix[i * sz + k] + matrix[k * sz + j];
-        //                if (matrix[i * sz + j] > distance)
-        //                {
-        //                    matrix[i * sz + j] = distance;
-        //                }
-                        
-        //            }
-        //        }
-        //    }
-        //    return result;
-        //}
-
-
         public List<string> FloydWarshall(int[,] graph)
         {
             List<string> result = new List<string>();
