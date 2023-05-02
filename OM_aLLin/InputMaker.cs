@@ -20,7 +20,10 @@ namespace OM_aLLin
                 string[] nums = lines[i].Split(' ');
                 for(int j = 0; j < numsAtLine.Count(); j++)
                 {
-                    result[i, j] = int.Parse(nums[j]);
+                    if (nums[j] == "i")
+                        result[i, j] = 99_999;
+                    else
+                        result[i, j] = int.Parse(nums[j]);
                 }
             }
             return result;

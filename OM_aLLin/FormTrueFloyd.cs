@@ -10,25 +10,29 @@ using System.Windows.Forms;
 
 namespace OM_aLLin
 {
-    public partial class Form_floyd : Form
+    public partial class FormTrueFloyd : Form
     {
+
         List<string> listStats;
         int pointer = 0;
         Matrix mtrx = new Matrix();
-        public Form_floyd()
+        Floyd fld = new Floyd();
+        public FormTrueFloyd()
         {
             InitializeComponent();
         }
 
-        private void Form_floyd_Load(object sender, EventArgs e)
+        private void FormTrueFloyd_Load(object sender, EventArgs e)
         {
             DevLoadText();
             
         }
 
+
         private void DevLoadText()
         {
-            richTextBox_InputMTRX.Text = "7 9 7\n9 7 8\n7 8 8";
+            //richTextBoxInput.Text = "0 6 i 11\ni 0 4 i\ni i 0 2\ni i i 0";
+            richTextBoxInput.Text = "0 3 10 i i\n3 0 i 5 i\n10 0 i 6 15\ni 5 6 0 4\ni i i 4 0";
         }
 
 
@@ -40,7 +44,7 @@ namespace OM_aLLin
 
                 buttonPrevStep.Enabled = true;
                 pointer++;
-                richTextBox1.Text = listStats[pointer];
+                richTextBoxOutput.Text = listStats[pointer];
             }
             if (pointer == listStats.Count - 1)
             {
@@ -60,7 +64,7 @@ namespace OM_aLLin
             {
                 buttonNextStep.Enabled = true;
                 pointer--;
-                richTextBox1.Text = listStats[pointer];
+                richTextBoxOutput.Text = listStats[pointer];
             }
             if (pointer == 0)
             {
@@ -81,7 +85,7 @@ namespace OM_aLLin
 
         private void loadMatrixRichToMem()
         {
-            mtrx = new Matrix(InputMaker.StringToArr(richTextBox_InputMTRX.Text));
+            mtrx = new Matrix(InputMaker.StringToArr(richTextBoxInput.Text));
         }
 
         private void btn_LoadMTRX_Click(object sender, EventArgs e)
@@ -89,21 +93,10 @@ namespace OM_aLLin
             loadMatrixRichToMem();
         }
 
-        private void runCalculateIter()
-        {
-            int iterations = int.Parse(textBox_iterations.Text);
-            IterationGame ig = new IterationGame(mtrx, iterations);
-            string chances;
-            listStats = ig.Calculate(out chances);
-            richTextBox1.Text = listStats[0];
-            richTextBox_chances.Text = chances;
-            initPointer();
-        }
-
         private void button_calculateIter_Click(object sender, EventArgs e)
         {
-            loadMatrixRichToMem();
-            runCalculateIter();
+            //loadMatrixRichToMem();
+           //runCalculateFloyd();
         }
 
         private void buttonNextStep_Click_1(object sender, EventArgs e)
@@ -114,6 +107,18 @@ namespace OM_aLLin
         private void buttonPrevStep_Click_1(object sender, EventArgs e)
         {
             toPrevStep();
+        }
+
+        private void LoadResultToList()
+        {
+            listStats = fld.FloydWarshall(InputMaker.StringToArr(richTextBoxInput.Text));
+        }
+
+        private void buttonUpload_Click(object sender, EventArgs e)
+        {
+
+            LoadResultToList();
+            initPointer();
         }
     }
 }

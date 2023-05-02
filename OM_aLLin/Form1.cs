@@ -94,5 +94,11 @@ namespace OM_aLLin
             Form_floyd frm = new Form_floyd();
             frm.Show();
         }
+
+        private void button_trueFLoyd_Click(object sender, EventArgs e)
+        {
+            FormTrueFloyd frm = new FormTrueFloyd();
+            frm.Show();
+        }
     }
 }

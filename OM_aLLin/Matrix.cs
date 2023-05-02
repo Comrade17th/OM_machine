@@ -11,6 +11,7 @@ namespace OM_aLLin
         public int[,] matrix;
         public int strokes; // i, n
         public int columns; // j, m
+        public int NoEdge = (int.MaxValue / 2) - 1;
         public Matrix()
         {
             matrix = null;
