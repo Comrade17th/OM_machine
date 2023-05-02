@@ -22,12 +22,12 @@ namespace OM_aLLin
         private void Form1_Load(object sender, EventArgs e)
         {
             
-            run_test(richTextBox1, out listStats);
+            run_test(richTextBox1,richTextBox_debug, out listStats);
             initPointer();
             int[] arr = new int[2];
         }
 
-        static void run_test(RichTextBox richTextBox, out List<string> listStats)
+        static void run_test(RichTextBox richTextBox,RichTextBox debug, out List<string> listStats)
         {
             listStats = new List<string>();
             int[,] priceMap = new int[,] {
@@ -41,6 +41,8 @@ namespace OM_aLLin
             
             TO.NordWestMethod(out listStats);
             richTextBox.Text = listStats[0];
+
+            debug.Text = TO.OptimizationTest();
         }
 
         private void toNextStep()

@@ -34,6 +34,7 @@
             this.labelPointer = new System.Windows.Forms.Label();
             this.button_Floyd = new System.Windows.Forms.Button();
             this.button_trueFLoyd = new System.Windows.Forms.Button();
+            this.richTextBox_debug = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -94,11 +95,20 @@
             this.button_trueFLoyd.UseVisualStyleBackColor = true;
             this.button_trueFLoyd.Click += new System.EventHandler(this.button_trueFLoyd_Click);
             // 
+            // richTextBox_debug
+            // 
+            this.richTextBox_debug.Location = new System.Drawing.Point(602, 307);
+            this.richTextBox_debug.Name = "richTextBox_debug";
+            this.richTextBox_debug.Size = new System.Drawing.Size(179, 190);
+            this.richTextBox_debug.TabIndex = 6;
+            this.richTextBox_debug.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 536);
+            this.Controls.Add(this.richTextBox_debug);
             this.Controls.Add(this.button_trueFLoyd);
             this.Controls.Add(this.button_Floyd);
             this.Controls.Add(this.labelPointer);
@@ -121,6 +131,7 @@
         private System.Windows.Forms.Label labelPointer;
         private System.Windows.Forms.Button button_Floyd;
         private System.Windows.Forms.Button button_trueFLoyd;
+        private System.Windows.Forms.RichTextBox richTextBox_debug;
     }
 }
 

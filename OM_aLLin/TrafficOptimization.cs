@@ -12,10 +12,7 @@ namespace OM_aLLin
         int[,] trafficMap;
         int[] storage; // n, srtokes
         int[] needs; // m, columns
-        int[] intU;
-        int[] intV;
-        bool[] boolU;
-        bool[] boolV;
+        
 
         // для n строки
         //Console.WriteLine(arr.GetLength(0));
@@ -168,6 +165,60 @@ namespace OM_aLLin
                 }
                 catch { }
             }
+        }
+
+        public string OptimizationTest()
+        {
+            StringBuilder sb = new StringBuilder("");
+            List<Tile> tiles = new List<Tile>();
+            tiles = GetZeroBoxesTiles();
+            foreach (Tile tile in tiles)
+                sb.Append(String.Format($"{tile.ToString()}\n"));
+            // go through 0 boxes tiles, calc the koef
+
+            //to go trough boxes tiles, 1ly we try, to make a rectangle from this tile and other 3
+            //tiles with some boxes
+
+            //else we go trough all of tiles with boxes
+
+            // going trhoug all current tiles, we calculate coef
+
+            // if koef less than zero, we should move boxes to there
+            return sb.ToString();
+        }
+
+
+        /// <summary>
+        /// return the list of tile's
+        /// that included to the path, to calculate
+        /// the coef
+        /// </summary>
+        /// <returns></returns>
+        private List<Tile> GetGoTroughTiles(Tile tile)
+        {
+            List<Tile> tiles = new List<Tile>();
+
+
+            return tiles;
+        }
+
+        /// <summary>
+        /// return the list of tile's indexes, that doesn't have boxes
+        /// </summary>
+        private List<Tile> GetZeroBoxesTiles()
+        {
+            List<Tile> tiles = new List<Tile>();
+            for(int n = 0; n < trafficMap.GetLength(0); n++)
+            {
+                for(int m = 0; m < trafficMap.GetLength(1); m++)
+                {
+                    if(trafficMap[n, m] == 0)
+                    {
+                        tiles.Add(new Tile(n, m));
+                    }
+                }
+            }
+            return tiles;
         }
 
         private void CopyArray(int[] from, out int[] to)
